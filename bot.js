@@ -414,7 +414,7 @@ bot.on("callback_query", async (query) => {
 
   // --- Q3 ---
   if (data.startsWith("q3_") && userStates[chatId]?.state === STATES.Q3) {
-    const map = { q3_50: "50k", q3_70: "70k", q3_120: "120k", q3_300: "300k" };
+    const map = { q3_50: "4000Br", q3_70: "6000Br", q3_120: "8000Br", q3_300: "10000Br" };
     userStates[chatId].income = map[data];
     userStates[chatId].state = STATES.NONE;
     if (userStates[chatId].last)
@@ -474,7 +474,7 @@ async function sendFinal(chatId) {
 
   await safeSendPhoto(chatId, path.join(__dirname, "photo", "2.webp"), {
     caption:
-      "📝 Ваши шаги:\n1. Нажмите кнопку ниже\n2. Активируйте пакет за 0.19Br\n3. Следуйте инструкции и получайте прибыль!",
+      "План действий по шагам:\n1. 👇🏻Нажмите ПЕРЕЙТИ и войдите через Telegram или E-mail;\n2. ⚠️ВАЖНО! Оплатите 0.19Br и подключите PRO доступ к аналитике на 5 дней;\n3. 💵Следуйте инструкциям и получайте прибыль.",
     reply_markup: { inline_keyboard: [[{ text: "Перейти", url }]] },
   });
 }
